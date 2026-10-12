@@ -1,0 +1,423 @@
+/* ==========================================================================
+   Pigeonhole Lab - Component Styles
+   Cards, Tabs, Steppers, Quizzes, ProofBoxes, Callouts, and Tooltips
+   ========================================================================== */
+
+/* Cards */
+.card {
+  background-color: var(--bg-surface);
+  border: 1px solid var(--border-light);
+  border-radius: var(--radius-lg);
+  padding: var(--space-6);
+  box-shadow: var(--shadow-sm);
+  transition: transform var(--transition-fast), box-shadow var(--transition-fast);
+}
+
+.card:hover {
+  box-shadow: var(--shadow-md);
+}
+
+.card-header {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  margin-bottom: var(--space-4);
+}
+
+.card-title {
+  font-size: 1.125rem;
+  font-weight: 700;
+  color: var(--text-main);
+}
+
+/* Badges */
+.badge {
+  display: inline-flex;
+  align-items: center;
+  padding: 3px 10px;
+  border-radius: var(--radius-full);
+  font-size: 0.75rem;
+  font-weight: 600;
+}
+
+.badge-beginner {
+  background-color: var(--accent-green-50);
+  color: var(--accent-green-600);
+  border: 1px solid var(--accent-green-200);
+}
+
+.badge-intermediate {
+  background-color: var(--primary-50);
+  color: var(--primary-600);
+  border: 1px solid var(--primary-200);
+}
+
+.badge-advanced {
+  background-color: var(--accent-purple-50);
+  color: var(--accent-purple-600);
+  border: 1px solid var(--accent-purple-200);
+}
+
+/* Callouts */
+.callout {
+  padding: var(--space-4) var(--space-5);
+  border-radius: var(--radius-md);
+  margin: var(--space-4) 0;
+  display: flex;
+  gap: var(--space-3);
+  align-items: flex-start;
+  font-size: 0.9375rem;
+  line-height: 1.5;
+}
+
+.callout-icon {
+  font-size: 1.25rem;
+  flex-shrink: 0;
+  line-height: 1;
+}
+
+.callout-idea {
+  background-color: var(--primary-50);
+  border-left: 4px solid var(--primary-500);
+  color: var(--text-main);
+}
+
+.callout-warning {
+  background-color: var(--accent-orange-50);
+  border-left: 4px solid var(--accent-orange-500);
+  color: var(--text-main);
+}
+
+.callout-funfact {
+  background-color: var(--accent-purple-50);
+  border-left: 4px solid var(--accent-purple-500);
+  color: var(--text-main);
+}
+
+.callout-reallife {
+  background-color: var(--accent-green-50);
+  border-left: 4px solid var(--accent-green-500);
+  color: var(--text-main);
+}
+
+/* 3-Level Explanation Tabs */
+.tabs-container {
+  margin: var(--space-5) 0;
+}
+
+.tabs-nav {
+  display: flex;
+  gap: var(--space-2);
+  border-bottom: 2px solid var(--border-light);
+  padding-bottom: 2px;
+}
+
+.tab-btn {
+  background: none;
+  border: none;
+  padding: var(--space-2) var(--space-4);
+  font-size: 0.9375rem;
+  font-weight: 600;
+  color: var(--text-muted);
+  cursor: pointer;
+  border-radius: var(--radius-sm) var(--radius-sm) 0 0;
+  transition: all var(--transition-fast);
+  display: flex;
+  align-items: center;
+  gap: 6px;
+  position: relative;
+}
+
+.tab-btn:hover {
+  color: var(--text-main);
+}
+
+.tab-btn.active {
+  color: var(--primary-600);
+}
+
+.tab-btn.active::after {
+  content: "";
+  position: absolute;
+  bottom: -4px;
+  left: 0;
+  right: 0;
+  height: 3px;
+  background-color: var(--primary-600);
+  border-radius: var(--radius-full);
+}
+
+.tab-pane {
+  display: none;
+  padding: var(--space-5) 0;
+}
+
+.tab-pane.active {
+  display: block;
+}
+
+/* Proof Stepper */
+.proof-box {
+  background-color: var(--bg-surface);
+  border: 1px solid var(--border-light);
+  border-radius: var(--radius-lg);
+  padding: var(--space-6);
+  margin: var(--space-4) 0;
+}
+
+.proof-header {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  margin-bottom: var(--space-4);
+}
+
+.stepper-steps {
+  display: flex;
+  flex-direction: column;
+  gap: var(--space-4);
+}
+
+.step-card {
+  border-left: 3px solid var(--border-light);
+  padding-left: var(--space-4);
+  position: relative;
+  transition: all var(--transition-normal);
+}
+
+.step-card.active {
+  border-left-color: var(--primary-600);
+}
+
+.step-card.revealed {
+  opacity: 1;
+}
+
+.step-card.hidden {
+  opacity: 0.3;
+  filter: blur(2px);
+  pointer-events: none;
+}
+
+.step-number {
+  font-weight: 700;
+  font-size: 0.8125rem;
+  color: var(--primary-600);
+  text-transform: uppercase;
+  margin-bottom: 2px;
+}
+
+.stepper-controls {
+  display: flex;
+  gap: var(--space-3);
+  margin-top: var(--space-5);
+}
+
+/* Buttons */
+.btn {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  gap: 8px;
+  padding: 8px 18px;
+  border-radius: var(--radius-md);
+  font-size: 0.875rem;
+  font-weight: 600;
+  cursor: pointer;
+  border: 1px solid transparent;
+  transition: all var(--transition-fast);
+  text-decoration: none;
+}
+
+.btn-primary {
+  background-color: var(--primary-600);
+  color: #fff;
+}
+
+.btn-primary:hover {
+  background-color: var(--primary-700);
+}
+
+.btn-accent {
+  background-color: var(--accent-orange-500);
+  color: #fff;
+}
+
+.btn-accent:hover {
+  background-color: var(--accent-orange-600);
+}
+
+.btn-outline {
+  background-color: transparent;
+  border-color: var(--border-light);
+  color: var(--text-main);
+}
+
+.btn-outline:hover {
+  background-color: var(--bg-subtle);
+}
+
+.btn-verify {
+  background: linear-gradient(135deg, var(--accent-green-500), var(--accent-green-600));
+  color: #fff;
+  font-weight: 700;
+}
+
+.btn-verify:hover {
+  filter: brightness(1.08);
+}
+
+/* Quiz Widget */
+.quiz-container {
+  background-color: var(--bg-surface);
+  border: 1px solid var(--border-light);
+  border-radius: var(--radius-lg);
+  padding: var(--space-6);
+  margin: var(--space-6) 0;
+}
+
+.quiz-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: var(--space-4);
+}
+
+.quiz-question-box {
+  margin-bottom: var(--space-4);
+}
+
+.quiz-question-title {
+  font-size: 1rem;
+  font-weight: 600;
+  margin-bottom: var(--space-3);
+}
+
+.quiz-options {
+  display: flex;
+  flex-direction: column;
+  gap: var(--space-2);
+}
+
+.quiz-option {
+  padding: var(--space-3) var(--space-4);
+  border-radius: var(--radius-md);
+  border: 1px solid var(--border-light);
+  background-color: var(--bg-surface);
+  cursor: pointer;
+  text-align: left;
+  font-size: 0.875rem;
+  color: var(--text-main);
+  transition: all var(--transition-fast);
+}
+
+.quiz-option:hover {
+  border-color: var(--primary-500);
+  background-color: var(--primary-50);
+}
+
+.quiz-option.correct {
+  background-color: var(--accent-green-50);
+  border-color: var(--accent-green-500);
+  color: var(--accent-green-600);
+  font-weight: 600;
+}
+
+.quiz-option.wrong {
+  background-color: var(--accent-red-50);
+  border-color: var(--accent-red-500);
+  color: var(--accent-red-600);
+}
+
+.quiz-feedback {
+  margin-top: var(--space-3);
+  padding: var(--space-3);
+  border-radius: var(--radius-md);
+  font-size: 0.875rem;
+  display: none;
+}
+
+.quiz-feedback.show {
+  display: block;
+}
+
+/* Form Controls & Sliders */
+.control-group {
+  margin-bottom: var(--space-4);
+}
+
+.control-label {
+  display: flex;
+  justify-content: space-between;
+  font-size: 0.875rem;
+  font-weight: 600;
+  margin-bottom: 6px;
+  color: var(--text-main);
+}
+
+.control-slider {
+  width: 100%;
+  accent-color: var(--primary-600);
+  cursor: pointer;
+}
+
+/* Tooltips & Glossary */
+.glossary-term {
+  border-bottom: 1.5px dotted var(--primary-500);
+  cursor: help;
+  position: relative;
+  color: var(--primary-600);
+  font-weight: 500;
+}
+
+.tooltip-popup {
+  position: absolute;
+  bottom: calc(100% + 6px);
+  left: 50%;
+  transform: translateX(-50%);
+  background-color: #0f172a;
+  color: #fff;
+  padding: 6px 12px;
+  border-radius: var(--radius-sm);
+  font-size: 0.75rem;
+  white-space: normal;
+  width: 200px;
+  text-align: center;
+  box-shadow: var(--shadow-lg);
+  pointer-events: none;
+  opacity: 0;
+  transition: opacity var(--transition-fast);
+  z-index: 100;
+}
+
+.glossary-term:hover .tooltip-popup {
+  opacity: 1;
+}
+
+/* Complexity Box */
+.complexity-box {
+  background-color: var(--bg-subtle);
+  border: 1px solid var(--border-light);
+  border-radius: var(--radius-md);
+  padding: var(--space-4);
+  margin: var(--space-4) 0;
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: var(--space-3);
+  font-size: 0.875rem;
+}
+
+.complexity-item strong {
+  display: block;
+  font-size: 0.75rem;
+  text-transform: uppercase;
+  color: var(--text-dim);
+  letter-spacing: 0.05em;
+}
+
+.complexity-item code {
+  font-family: var(--font-mono);
+  font-size: 0.9375rem;
+  color: var(--primary-600);
+  font-weight: 600;
+}

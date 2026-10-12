@@ -1,0 +1,220 @@
+<!DOCTYPE html>
+<html lang="en" data-theme="light">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Pigeonhole Lab — Interactive Combinatorics & Discrete Mathematics</title>
+  <meta name="description" content="An interactive textbook-grade discrete mathematics platform exploring the Pigeonhole Principle, algorithms, and 2D/3D visualizations.">
+
+  <!-- Design System CSS -->
+  <link rel="stylesheet" href="css/tokens.css">
+  <link rel="stylesheet" href="css/layout.css">
+  <link rel="stylesheet" href="css/components.css">
+  <link rel="stylesheet" href="css/modules.css">
+
+  <!-- Vendored Offline Math Typesetting -->
+  <link rel="stylesheet" href="vendor/katex.min.css">
+  <script defer src="vendor/katex.min.js"></script>
+  <script defer src="vendor/auto-render.min.js"></script>
+
+  <!-- Vendored Offline 2D and 3D Visuals -->
+  <script src="vendor/d3.min.js"></script>
+  <script src="vendor/three.min.js"></script>
+  <script src="vendor/OrbitControls.js"></script>
+</head>
+<body>
+  <!-- Offline Backend Warning Banner -->
+  <div class="offline-banner" id="offlineBanner" role="alert">
+    <span>⚠️</span>
+    <span>C++ Backend is offline on port 8080. Running simulations in client-side fallback mode with built-in data.</span>
+  </div>
+
+  <div class="app-container">
+    <!-- Left Sidebar -->
+    <aside class="sidebar" id="sidebar" aria-label="Main Navigation">
+      <div class="sidebar-header">
+        <a href="#/" class="sidebar-brand">
+          <div class="brand-icon">🕊️</div>
+          <div>
+            <div class="brand-title">Pigeonhole Lab</div>
+            <div class="brand-subtitle">Discrete Math & DSA</div>
+          </div>
+        </a>
+      </div>
+
+      <nav class="sidebar-nav">
+        <div class="nav-section-title">Overview</div>
+        <a href="#/" class="nav-item active" data-nav="home">🏠 Home & Dashboard</a>
+        <a href="#/module/learning_path" class="nav-item" data-nav="learning_path">🗺️ Learning Path Map</a>
+        <a href="#/module/challenge_mode" class="nav-item" data-nav="challenge_mode">🎯 Challenge Mode</a>
+
+        <div class="nav-section-title">Part A: Forms of the Principle</div>
+        <a href="#/module/a1_simple" class="nav-item" data-nav="a1_simple">
+          <span>A1. Simple Principle</span>
+          <span class="nav-badge badge-tier1">Tier 1</span>
+        </a>
+        <a href="#/module/a2_generalized" class="nav-item" data-nav="a2_generalized">
+          <span>A2. Generalized Principle</span>
+          <span class="nav-badge badge-tier1">Tier 1</span>
+        </a>
+        <a href="#/module/a3_exhaustive" class="nav-item" data-nav="a3_exhaustive">
+          <span>A3. Exhaustive Verifier</span>
+          <span class="nav-badge badge-tier1">Tier 1</span>
+        </a>
+        <a href="#/module/a4_socks_draws" class="nav-item" data-nav="a4_socks_draws">
+          <span>A4. Minimum Draws / Socks</span>
+          <span class="nav-badge badge-tier1">Tier 1</span>
+        </a>
+        <a href="#/module/a5_strong_weighted" class="nav-item" data-nav="a5_strong_weighted">
+          <span>A5. Strong / Weighted</span>
+          <span class="nav-badge badge-tier2">Tier 2</span>
+        </a>
+        <a href="#/module/a6_averaging" class="nav-item" data-nav="a6_averaging">
+          <span>A6. Averaging Principle</span>
+          <span class="nav-badge badge-tier2">Tier 2</span>
+        </a>
+        <a href="#/module/a7_infinite" class="nav-item" data-nav="a7_infinite">
+          <span>A7. Infinite Principle</span>
+          <span class="nav-badge badge-tier3">Tier 3</span>
+        </a>
+        <a href="#/module/a8_higher_structure" class="nav-item" data-nav="a8_higher_structure">
+          <span>A8. Higher Structure</span>
+          <span class="nav-badge badge-tier3">Tier 3</span>
+        </a>
+
+        <div class="nav-section-title">Part B: Classic Applications</div>
+        <a href="#/module/b10_core_table" class="nav-item" data-nav="b10_core_table">
+          <span>B10. The Pigeonhole Table</span>
+          <span class="nav-badge badge-tier1">DSA</span>
+        </a>
+        <a href="#/module/b5_hashing" class="nav-item" data-nav="b5_hashing">
+          <span>B5. Hashing & Collisions</span>
+          <span class="nav-badge badge-tier1">Tier 1</span>
+        </a>
+        <a href="#/module/b3_divisible" class="nav-item" data-nav="b3_divisible">
+          <span>B3. Divisible Subsequences</span>
+          <span class="nav-badge badge-tier1">Tier 1</span>
+        </a>
+        <a href="#/module/b2_dirichlet" class="nav-item" data-nav="b2_dirichlet">
+          <span>B2. Dirichlet Approximation</span>
+          <span class="nav-badge badge-tier1">Tier 1</span>
+        </a>
+        <a href="#/module/b4_birthday" class="nav-item" data-nav="b4_birthday">
+          <span>B4. Birthday Paradox</span>
+          <span class="nav-badge badge-tier1">Tier 1</span>
+        </a>
+        <a href="#/module/b1_erdos_szekeres" class="nav-item" data-nav="b1_erdos_szekeres">
+          <span>B1. Erdős-Szekeres Theorem</span>
+          <span class="nav-badge badge-tier1">Tier 1</span>
+        </a>
+        <a href="#/module/b6_ramsey" class="nav-item" data-nav="b6_ramsey">
+          <span>B6. Ramsey Theory R(3,3)=6</span>
+          <span class="nav-badge badge-tier1">Tier 1</span>
+        </a>
+        <a href="#/module/b7_handshake" class="nav-item" data-nav="b7_handshake">
+          <span>B7. Handshake / Equal Degrees</span>
+          <span class="nav-badge badge-tier2">Tier 2</span>
+        </a>
+        <a href="#/module/b8_compression" class="nav-item" data-nav="b8_compression">
+          <span>B8. Compression Impossibility</span>
+          <span class="nav-badge badge-tier2">Tier 2</span>
+        </a>
+        <a href="#/module/b9_pigeon_sort" class="nav-item" data-nav="b9_pigeon_sort">
+          <span>B9. Pigeonhole Sort</span>
+          <span class="nav-badge badge-tier2">Tier 2</span>
+        </a>
+
+        <div class="nav-section-title">Part C: Graph-Theory Concepts</div>
+        <a href="#/module/c1_havel_hakimi" class="nav-item" data-nav="c1_havel_hakimi">
+          <span>C1. Havel-Hakimi Theorem</span>
+          <span class="nav-badge badge-tier2">Tier 2</span>
+        </a>
+        <a href="#/module/c2_hall_marriage" class="nav-item" data-nav="c2_hall_marriage">
+          <span>C2. Hall's Marriage Theorem</span>
+          <span class="nav-badge badge-tier2">Tier 2</span>
+        </a>
+        <a href="#/module/c3_graph_coloring" class="nav-item" data-nav="c3_graph_coloring">
+          <span>C3. Graph Coloring</span>
+          <span class="nav-badge badge-tier2">Tier 2</span>
+        </a>
+        <a href="#/module/c4_mantel" class="nav-item" data-nav="c4_mantel">
+          <span>C4. Mantel's Theorem</span>
+          <span class="nav-badge badge-tier3">Tier 3</span>
+        </a>
+        <a href="#/module/c5_euler_hamilton" class="nav-item" data-nav="c5_euler_hamilton">
+          <span>C5. Euler & Hamilton</span>
+          <span class="nav-badge badge-tier3">Tier 3</span>
+        </a>
+
+        <div class="nav-section-title">Part D: Geometry & Numbers</div>
+        <a href="#/module/g1_points_square" class="nav-item" data-nav="g1_points_square">
+          <span>G1. Points in a Square</span>
+          <span class="nav-badge badge-tier2">Tier 2</span>
+        </a>
+        <a href="#/module/g2_happy_ending" class="nav-item" data-nav="g2_happy_ending">
+          <span>G2. Happy Ending Problem</span>
+          <span class="nav-badge badge-tier3">Tier 3</span>
+        </a>
+        <a href="#/module/g3_number_theory" class="nav-item" data-nav="g3_number_theory">
+          <span>G3. Number Theory Cards</span>
+          <span class="nav-badge badge-tier2">Tier 2</span>
+        </a>
+
+        <div class="nav-section-title">Part E: Applications</div>
+        <a href="#/module/r1_real_world" class="nav-item" data-nav="r1_real_world">
+          <span>R1. Real-World 15 Cases</span>
+          <span class="nav-badge badge-tier1">Tier 1</span>
+        </a>
+
+        <div class="nav-section-title">Reference & Tools</div>
+        <a href="#/module/glossary" class="nav-item" data-nav="glossary">
+          <span>📚 Glossary & Terms</span>
+          <span class="nav-badge" style="background:var(--accent-blue)">Docs</span>
+        </a>
+        <a href="#/module/accessibility" class="nav-item" data-nav="accessibility">
+          <span>♿ Accessibility</span>
+          <span class="nav-badge" style="background:var(--accent-purple)">A11y</span>
+        </a>
+      </nav>
+    </aside>
+
+    <!-- Main Content Area -->
+    <div class="main-wrapper">
+      <!-- Sticky Topbar -->
+      <header class="topbar">
+        <div class="topbar-left">
+          <button class="mobile-nav-toggle" id="mobileNavToggle" aria-label="Toggle Navigation">☰</button>
+          <div class="search-container">
+            <span class="search-icon">🔍</span>
+            <input type="search" class="search-input" id="globalSearch" placeholder="Search modules, theorems, formulas..." aria-label="Search modules">
+          </div>
+        </div>
+
+        <div class="topbar-actions">
+          <!-- Backend Connection Status -->
+          <div class="backend-indicator" id="backendIndicator" title="C++ Backend API Status">
+            <span class="status-dot" id="backendDot"></span>
+            <span id="backendText">Backend Checking...</span>
+          </div>
+
+          <!-- Learning Path Quick Button -->
+          <a href="#/module/learning_path" class="btn-primary-sm" title="View interactive learning path">
+            <span>🗺️</span> Learning Path
+          </a>
+
+          <!-- Dark/Light Theme Toggle -->
+          <button class="btn-icon" id="themeToggleBtn" aria-label="Toggle Light/Dark Theme" title="Toggle theme">
+            <span id="themeIcon">🌙</span>
+          </button>
+        </div>
+      </header>
+
+      <!-- Dynamic Module Viewport -->
+      <main class="content-container" id="contentContainer" role="main"></main>
+    </div>
+  </div>
+
+  <!-- Main ES Module Script -->
+  <script type="module" src="js/app.js"></script>
+</body>
+</html>

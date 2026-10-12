@@ -1,0 +1,136 @@
+/* ==========================================================================
+   Pigeonhole Lab - Design Tokens
+   WCAG AA Compliant, Light & Dark Theme Support, Fluid Typography & Spacing
+   ========================================================================== */
+
+:root {
+  /* Brand & Semantic Color Scales - Light Theme */
+  --bg-primary: #f8fafc;
+  --bg-surface: #ffffff;
+  --bg-surface-elevated: #ffffff;
+  --bg-subtle: #f1f5f9;
+  --bg-input: #ffffff;
+
+  --text-main: #0f172a;
+  --text-muted: #475569;
+  --text-dim: #94a3b8;
+  --text-inverse: #ffffff;
+
+  --border-light: #e2e8f0;
+  --border-focus: #3b82f6;
+
+  /* Primary Palette (Calm Indigo / Blue) */
+  --primary-50: #eff6ff;
+  --primary-100: #dbeafe;
+  --primary-200: #bfdbfe;
+  --primary-500: #3b82f6;
+  --primary-600: #2563eb;
+  --primary-700: #1d4ed8;
+
+  /* Collision / Discovery Accent (Warm Orange) */
+  --accent-orange-50: #fff7ed;
+  --accent-orange-200: #fed7aa;
+  --accent-orange-500: #f97316;
+  --accent-orange-600: #ea580c;
+  --accent-orange-glow: rgba(249, 115, 22, 0.35);
+
+  /* Verification Accent (Green) */
+  --accent-green-50: #f0fdf4;
+  --accent-green-200: #bbf7d0;
+  --accent-green-500: #22c55e;
+  --accent-green-600: #16a34a;
+
+  /* Counter-example / Error Accent (Red) */
+  --accent-red-50: #fef2f2;
+  --accent-red-200: #fecaca;
+  --accent-red-500: #ef4444;
+  --accent-red-600: #dc2626;
+
+  /* Purple / Theory Accent */
+  --accent-purple-50: #faf5ff;
+  --accent-purple-200: #e9d5ff;
+  --accent-purple-500: #a855f7;
+  --accent-purple-600: #9333ea;
+
+  /* Shadows */
+  --shadow-sm: 0 1px 2px 0 rgb(0 0 0 / 0.05);
+  --shadow-md: 0 4px 6px -1px rgb(0 0 0 / 0.1), 0 2px 4px -2px rgb(0 0 0 / 0.1);
+  --shadow-lg: 0 10px 15px -3px rgb(0 0 0 / 0.1), 0 4px 6px -4px rgb(0 0 0 / 0.1);
+  --shadow-glow: 0 0 16px var(--accent-orange-glow);
+
+  /* Radii */
+  --radius-sm: 6px;
+  --radius-md: 10px;
+  --radius-lg: 16px;
+  --radius-full: 9999px;
+
+  /* Typography */
+  --font-sans: 'Inter', -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Helvetica, Arial, sans-serif;
+  --font-mono: "JetBrains Mono", "Fira Code", ui-monospace, SFMono-Regular, Menlo, Monaco, Consolas, monospace;
+
+  /* Spacing 8px Grid */
+  --space-1: 4px;
+  --space-2: 8px;
+  --space-3: 12px;
+  --space-4: 16px;
+  --space-5: 20px;
+  --space-6: 24px;
+  --space-8: 32px;
+  --space-10: 40px;
+  --space-12: 48px;
+
+  /* Transitions */
+  --transition-fast: 150ms cubic-bezier(0.4, 0, 0.2, 1);
+  --transition-normal: 250ms cubic-bezier(0.4, 0, 0.2, 1);
+  --transition-slow: 350ms cubic-bezier(0.4, 0, 0.2, 1);
+}
+
+/* Dark Theme Overrides */
+[data-theme="dark"] {
+  --bg-primary: #090d16;
+  --bg-surface: #0f172a;
+  --bg-surface-elevated: #1e293b;
+  --bg-subtle: #1e293b;
+  --bg-input: #1e293b;
+
+  --text-main: #f8fafc;
+  --text-muted: #94a3b8;
+  --text-dim: #64748b;
+  --text-inverse: #0f172a;
+
+  --border-light: #334155;
+  --border-focus: #60a5fa;
+
+  --primary-50: rgba(59, 130, 246, 0.12);
+  --primary-100: rgba(59, 130, 246, 0.2);
+  --primary-200: #60a5fa;
+  --primary-500: #3b82f6;
+  --primary-600: #60a5fa;
+  --primary-700: #93c5fd;
+
+  --accent-orange-50: rgba(249, 115, 22, 0.12);
+  --accent-orange-200: #fb923c;
+  --accent-orange-glow: rgba(249, 115, 22, 0.45);
+
+  --accent-green-50: rgba(34, 197, 94, 0.12);
+  --accent-green-200: #4ade80;
+
+  --accent-red-50: rgba(239, 68, 68, 0.12);
+  --accent-red-200: #f87171;
+
+  --accent-purple-50: rgba(168, 85, 247, 0.12);
+  --accent-purple-200: #c084fc;
+
+  --shadow-sm: 0 1px 2px 0 rgb(0 0 0 / 0.5);
+  --shadow-md: 0 4px 6px -1px rgb(0 0 0 / 0.5), 0 2px 4px -2px rgb(0 0 0 / 0.5);
+  --shadow-lg: 0 10px 15px -3px rgb(0 0 0 / 0.6), 0 4px 6px -4px rgb(0 0 0 / 0.6);
+}
+
+@media (prefers-reduced-motion: reduce) {
+  * {
+    animation-duration: 0.01ms !important;
+    animation-iteration-count: 1 !important;
+    transition-duration: 0.01ms !important;
+    scroll-behavior: auto !important;
+  }
+}

@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Pigeonhole Lab</title>
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+  <main class="app-shell">
+    <header>
+      <div><p class="eyebrow">Discrete mathematics</p><h1>Pigeonhole Lab</h1></div>
+      <p class="header-copy">Place more objects than boxes. A repeat becomes unavoidable.</p>
+    </header>
+    <section class="controls" aria-label="Simulation controls">
+      <label class="scenario-label">Scenario
+        <select id="scenarioSelect">
+          <option value="custom">Custom objects and boxes</option>
+          <option value="students">Students and birth months</option>
+          <option value="birthdays">Birthdays in a week</option>
+          <option value="codes">Users and access codes</option>
+        </select>
+      </label>
+      <label>Objects <output id="objectValue" for="objectRange">8</output><input id="objectRange" type="range" min="1" max="30" value="8"></label>
+      <label>Boxes <output id="boxValue" for="boxRange">5</output><input id="boxRange" type="range" min="1" max="12" value="5"></label>
+      <button id="dropButton" type="button">Drop objects</button><button id="resetButton" type="button" class="quiet">Reset</button>
+    </section>
+    <section class="status" aria-live="polite"><div><span id="statusDot"></span><strong id="statusTitle">Ready to explore</strong></div><p id="statusText">Press “Drop objects” to watch the distribution.</p><p id="guarantee"></p></section>
+    <section class="simulation" aria-label="Objects being distributed into boxes">
+      <p id="simulationCaption" class="simulation-caption"></p>
+      <div class="object-tray"><p>Objects waiting</p><div id="waitingObjects" class="waiting-objects"></div></div>
+      <div class="arrow" aria-hidden="true">↓</div><div id="boxGrid" class="box-grid"></div>
+    </section>
+    <p class="note">When objects exceed boxes, at least one box contains two or more objects.</p>
+  </main>
+  <script src="script.js"></script>
+</body>
+</html>
