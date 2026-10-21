@@ -202,7 +202,7 @@ export default {
 
         <!-- 11. Related Modules -->
         <section style="margin:24px 0; display:flex; gap:12px; flex-wrap:wrap">
-          <a href="#/module/b1_erdos_szekeres" class="btn btn-outline">← Back: B1. Erdős-Szekeres</a>
+          <a href="#/module/b4_birthday" class="btn btn-outline">← Back: B4. Birthday Paradox</a>
           <a href="#/module/b7_handshake" class="btn btn-outline">Next: B7. Handshake / Equal Degrees →</a>
           <a href="#/module/c1_havel_hakimi" class="btn btn-outline">C1. Havel-Hakimi Theorem →</a>
         </section>

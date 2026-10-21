@@ -111,8 +111,7 @@ export default {
         <!-- Related Modules -->
         <section style="margin:24px 0; display:flex; gap:12px; flex-wrap:wrap">
           <a href="#/module/b3_divisible" class="btn btn-outline">← Back: B3. Divisible Subsequence</a>
-          <a href="#/module/b2_dirichlet" class="btn btn-outline">B2. Dirichlet Approximation →</a>
-          <a href="#/module/b1_erdos_szekeres" class="btn btn-outline">B1. Erdős-Szekeres Theorem →</a>
+          <a href="#/module/b6_ramsey" class="btn btn-outline">B5. Ramsey Theory →</a>
         </section>
       </div>
     `;

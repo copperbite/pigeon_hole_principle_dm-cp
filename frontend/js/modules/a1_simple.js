@@ -196,7 +196,7 @@ export default {
         <!-- 11. Related Modules -->
         <section style="margin:24px 0; display:flex; gap:12px; flex-wrap:wrap">
           <a href="#/module/a2_generalized" class="btn btn-outline">Next: A2. Generalized Principle →</a>
-          <a href="#/module/a3_exhaustive" class="btn btn-outline">A3. Exhaustive Verifier →</a>
+          <a href="#/module/a4_socks_draws" class="btn btn-outline">A4. Minimum Draws / Socks →</a>
           <a href="#/module/b10_core_table" class="btn btn-outline">B10. The Pigeonhole Table →</a>
         </section>
       </div>

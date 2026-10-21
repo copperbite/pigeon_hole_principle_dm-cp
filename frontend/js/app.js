@@ -117,6 +117,20 @@ class App {
       moduleId = hash.replace('/module/', '').trim();
     }
 
+    const REDIRECT_MAP = {
+      'b1_erdos_szekeres': 'b6_ramsey',
+      'b8_compression': 'r1_real_world',
+      'c2_hall_marriage': 'c1_havel_hakimi',
+      'b2_dirichlet': 'b3_divisible',
+      'a3_exhaustive': 'a2_generalized',
+      'a6_averaging': 'a2_generalized'
+    };
+
+    if (REDIRECT_MAP[moduleId]) {
+      window.location.hash = `#/module/${REDIRECT_MAP[moduleId]}`;
+      return;
+    }
+
     // Update sidebar active link
     document.querySelectorAll('.nav-item').forEach(item => {
       const target = item.getAttribute('data-nav');

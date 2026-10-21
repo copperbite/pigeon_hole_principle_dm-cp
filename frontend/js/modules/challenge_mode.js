@@ -70,21 +70,21 @@ const challenge_mode = {
         difficulty: 'hard'
       },
       {
-        scenario: "Is it possible to losslessly compress ALL files of exactly 1000 bytes to files of at most 999 bytes?",
-        pigeons: "2^8000 possible 1000-byte files",
-        holes: "2^7992 - 1 possible files of ≤ 999 bytes (all shorter lengths)",
-        answer: 1,
-        options: ["Yes, with a smart enough compression algorithm", "No — by PHP, 2^8000 inputs cannot all map to ≤2^7992-1 outputs injectively", "Only for compressible files, not random ones", "Yes, for binary files specifically"],
-        explanation: "Impossible! There are 2^8000 files of exactly 1000 bytes. The total number of files of length ≤999 is 2^7992-1 (summing 2^0+...+2^7992). Since 2^8000 ≫ 2^7992, by the Pigeonhole Principle, at least 2^8000-2^7992+1 inputs must expand.",
-        difficulty: 'hard'
+        scenario: "In a room of 23 people, what is the approximate probability that at least two people share the exact same birthday (month and day)?",
+        pigeons: "23 individuals",
+        holes: "365 days of the year",
+        answer: 2,
+        options: ["Less than 5% (since 23 is tiny compared to 365)", "About 23/365 ≈ 6.3%", "Over 50% (approx 50.7%)", "100% guaranteed by the Pigeonhole Principle"],
+        explanation: "Over 50%! While the Pigeonhole Principle requires 366+1 = 367 people for a 100% certainty, there are 23×22/2 = 253 pairs of people. The probability that all 23 birthdays are distinct drops below 50% (1 - 365×364×...×343 / 365^23 ≈ 50.7%).",
+        difficulty: 'medium'
       },
       {
-        scenario: "You have a sequence of 10 distinct integers. The Erdős-Szekeres theorem guarantees a monotone subsequence of length at least...",
-        pigeons: "10 elements assigned (L_i, D_i) pairs",
-        holes: "Grid of increasing/decreasing lengths",
-        answer: 2,
-        options: ["at least 2 elements", "at least 3 elements (since ⌈√10⌉+1=4, wait...)", "at least 4 elements (⌈√10⌉ = 4, and mn+1=10 means m=n=3, so length ≥ 3+1=4)", "at least 5 elements"],
-        explanation: "With n = 10 = 3×3+1, we have mn+1 = 10 where m=n=3. The Erdős-Szekeres theorem guarantees either an increasing subsequence of length m+1=4 or a decreasing subsequence of length n+1=4. So at least 4!",
+        scenario: "In any party of 6 people where every pair are either mutual friends or mutual strangers, what does Ramsey's Theorem R(3,3)=6 guarantee?",
+        pigeons: "5 acquaintances of any chosen person",
+        holes: "2 relationship types (friend or stranger)",
+        answer: 1,
+        options: ["Everyone has at least 3 friends", "There are either 3 mutual friends or 3 mutual strangers", "No two people can be strangers", "At least 4 people must know each other"],
+        explanation: "By Ramsey's theorem R(3,3)=6: pick any person A. By PHP, among A's 5 connections, at least ⌈5/2⌉ = 3 must be of the same type (say, friends B, C, D). If any pair among B, C, D are friends, they form a 3-clique with A. Otherwise, B, C, D are 3 mutual strangers!",
         difficulty: 'hard'
       },
       {
@@ -106,12 +106,12 @@ const challenge_mode = {
         difficulty: 'medium'
       },
       {
-        scenario: "A bipartite graph has 5 boys and 4 girls. Each boy must be matched to a distinct girl. Is a perfect matching of boys always possible?",
-        pigeons: "5 boys to match",
-        holes: "4 girls available",
-        answer: 1,
-        options: ["Yes, with the right algorithm", "No — by Hall's theorem, we need |N(S)| ≥ |S| for all S⊆Boys, but 5 > 4 makes this impossible", "Only if each boy knows all 4 girls", "Yes, by using augmenting paths"],
-        explanation: "No! A perfect matching of ALL 5 boys into 4 girls is impossible — we would need |Y| ≥ |X|. The entire set S of all 5 boys violates Hall's condition: |N(S)| ≤ 4 < 5 = |S|. At most 4 boys can be matched.",
+        scenario: "According to Mantel's Theorem, what is the maximum number of edges a graph with 8 vertices can have without containing any triangles (K3)?",
+        pigeons: "Edges distributed across bipartite partitions",
+        holes: "Triangle-free capacity bound",
+        answer: 2,
+        options: ["8 edges", "12 edges", "⌊8²/4⌋ = 16 edges (achieved by K_{4,4})", "28 edges (complete graph K8)"],
+        explanation: "Mantel's Theorem states that any triangle-free graph on n vertices has at most ⌊n²/4⌋ edges. For n=8: ⌊64/4⌋ = 16 edges. The extremal graph is the complete bipartite graph K_{4,4}.",
         difficulty: 'medium'
       },
       {

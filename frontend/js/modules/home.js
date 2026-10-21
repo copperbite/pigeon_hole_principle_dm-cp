@@ -121,23 +121,26 @@ export default {
 
   renderModuleCards(container) {
     const modules = [
-      { id: 'a1_simple', title: 'A1. Simple Pigeonhole Principle', badge: 'Beginner', category: 'beginner', icon: '🕊️', summary: 'The fundamental theorem: if n > k, at least one box contains ≥ 2 objects.' },
+      { id: 'a1_simple', title: 'A1. Simple Principle', badge: 'Beginner', category: 'beginner', icon: '🕊️', summary: 'The fundamental theorem: if n > k, at least one box contains ≥ 2 objects.' },
       { id: 'a2_generalized', title: 'A2. Generalized Principle', badge: 'Beginner', category: 'beginner', icon: '📊', summary: 'Ceiling bound ⌈n/k⌉. Compare round-robin, random, and adversarial allocations.' },
-      { id: 'a3_exhaustive', title: 'A3. Exhaustive Computer Verifier', badge: 'Intermediate', category: 'intermediate', icon: '💻', summary: 'Odometer brute-force check over all kⁿ mappings verifying that the bound is tight.' },
-      { id: 'a4_socks_draws', title: 'A4. Minimum Draws / Socks', badge: 'Beginner', category: 'beginner', icon: '🧦', summary: 'Worst-case adversary strategy requiring k(r - 1) + 1 draws to guarantee r identical items.' },
-      { id: 'b10_core_table', title: 'B10. The Pigeonhole Table (DSA)', badge: 'Beginner', category: 'beginner', icon: '🗄️', summary: 'The original interactive PigeonholeTable with modulo hash mapping and collision detection.' },
-      { id: 'b5_hashing', title: 'B5. Hashing & Collisions', badge: 'Intermediate', category: 'intermediate', icon: '⚡', summary: 'Separate chaining vs linear probing with modulo, Knuth multiplicative, and PRNG hashes.' },
+      { id: 'a4_socks_draws', title: 'A3. Minimum Draws / Socks', badge: 'Beginner', category: 'beginner', icon: '🧦', summary: 'Worst-case adversary strategy requiring k(r - 1) + 1 draws to guarantee r identical items.' },
+      { id: 'a5_strong_weighted', title: 'A4. Strong / Weighted Principle', badge: 'Intermediate', category: 'intermediate', icon: '⚖️', summary: 'Heterogeneous bucket capacities and quota overflow detection.' },
+      { id: 'b10_core_table', title: 'B1. The Pigeonhole Table (DSA)', badge: 'Beginner', category: 'beginner', icon: '🗄️', summary: 'Interactive hash table data structure with modulo mapping and collision detection.' },
+      { id: 'b5_hashing', title: 'B2. Hashing & Collisions', badge: 'Intermediate', category: 'intermediate', icon: '⚡', summary: 'Separate chaining vs linear probing with modulo, Knuth multiplicative, and PRNG hashes.' },
       { id: 'b3_divisible', title: 'B3. Divisible Subsequences', badge: 'Intermediate', category: 'intermediate', icon: '🔢', summary: 'Prefix sums modulo n guarantee a contiguous subarray whose sum is divisible by n.' },
-      { id: 'b2_dirichlet', title: 'B2. Dirichlet Approximation', badge: 'Advanced', category: 'advanced', icon: '🎯', summary: 'Approximating irrational numbers within 1/q² via fractional parts in 1/N buckets.' },
       { id: 'b4_birthday', title: 'B4. Birthday Paradox', badge: 'Intermediate', category: 'intermediate', icon: '🎂', summary: '50% probability at 23 people vs 100% pigeonhole certainty at 366 people.' },
-      { id: 'b1_erdos_szekeres', title: 'B1. Erdős-Szekeres Theorem', badge: 'Advanced', category: 'advanced', icon: '📈', summary: 'Any sequence of mn + 1 distinct numbers has an increasing (m+1) or decreasing (n+1) subsequence.' },
-      { id: 'b6_ramsey', title: 'B6. Ramsey Theory R(3,3)=6', badge: 'Advanced', category: 'graphs', icon: '🎉', summary: 'The Party Problem: 6 people always contain 3 mutual friends or 3 mutual strangers.' },
-      { id: 'b7_handshake', title: 'B7. Handshake / Equal Degrees', badge: 'Beginner', category: 'graphs', icon: '🤝', summary: 'Any graph with n ≥ 2 vertices has two vertices of equal degree. Handshaking lemma.' },
+      { id: 'b6_ramsey', title: 'B5. Ramsey Theory R(3,3)=6', badge: 'Advanced', category: 'advanced', icon: '🎉', summary: 'The Party Problem: 6 people always contain 3 mutual friends or 3 mutual strangers.' },
+      { id: 'b7_handshake', title: 'B6. Handshake / Equal Degrees', badge: 'Beginner', category: 'graphs', icon: '🤝', summary: 'Any graph with n ≥ 2 vertices has two vertices of equal degree. Handshaking lemma.' },
+      { id: 'b9_pigeon_sort', title: 'B7. Pigeonhole Sort', badge: 'Intermediate', category: 'intermediate', icon: '📶', summary: 'O(n + Range) non-comparison sorting algorithm with live performance benchmark.' },
       { id: 'c1_havel_hakimi', title: 'C1. Havel-Hakimi Algorithm', badge: 'Intermediate', category: 'graphs', icon: '🕸️', summary: 'Determining if a degree sequence is graphic, with step-by-step constructive graph realization.' },
-      { id: 'c2_hall_marriage', title: 'C2. Hall\'s Marriage Theorem', badge: 'Advanced', category: 'graphs', icon: '💍', summary: 'Bipartite maximum matching via augmenting paths and Hall violator set detection.' },
-      { id: 'g1_points_square', title: 'G1. Points in a Unit Square', badge: 'Beginner', category: 'graphs', icon: '📐', summary: 'Any 5 points in a unit square contain a pair within distance √2 / 2.' },
-      { id: 'r1_real_world', title: 'R1. Real-World Case Files', badge: 'Beginner', category: 'realworld', icon: '🌍', summary: '15 real-world case files: Bloom filters, Git hashes, hair counts, IPv4 NAT, cache misses.' },
-      { id: 'learning_path', title: 'Learning Path Interactive Map', badge: 'All Levels', category: 'all', icon: '🗺️', summary: 'Guided graph showing how the principle flows from basic counting to advanced graph invariants.' }
+      { id: 'c3_graph_coloring', title: 'C2. Graph Coloring Bounds', badge: 'Advanced', category: 'graphs', icon: '🎨', summary: 'Lower bound χ(G) ≥ |V| / α(G) with greedy vs exact backtracking chromatic number.' },
+      { id: 'c4_mantel', title: 'C3. Mantel\'s Theorem', badge: 'Advanced', category: 'graphs', icon: '📐', summary: 'Maximum edge limit ⌊n²/4⌋ for triangle-free graphs and complete bipartite extremal graphs.' },
+      { id: 'g1_points_square', title: 'D1. Points in a Unit Square', badge: 'Beginner', category: 'graphs', icon: '📏', summary: 'Any 5 points in a unit square contain a pair within distance √2 / 2.' },
+      { id: 'g2_happy_ending', title: 'D2. Happy Ending Problem', badge: 'Advanced', category: 'graphs', icon: '✨', summary: 'Any 5 points in general position contain a convex quadrilateral.' },
+      { id: 'g3_number_theory', title: 'D3. Number Theory Cards', badge: 'Intermediate', category: 'intermediate', icon: '🎴', summary: 'Coprime integers, repeating decimal period cycles, and binary multiples.' },
+      { id: 'r1_real_world', title: 'R1. Real-World Case Files', badge: 'Beginner', category: 'realworld', icon: '🌍', summary: '11 curated real-world case files: Git hashes, hair counts, IPv4 NAT, Bloom filters, and scheduling.' },
+      { id: 'challenge_mode', title: 'Challenge Mode', badge: 'All Levels', category: 'all', icon: '🎯', summary: '12 progressive scenarios testing your ability to identify pigeons, holes, and invariants.' },
+      { id: 'learning_path', title: 'Learning Path Roadmap', badge: 'All Levels', category: 'all', icon: '🗺️', summary: 'Interactive concept roadmap visually linking prerequisites from basic counting to graphs.' }
     ];
 
     const grid = container.querySelector('#modulesGrid');

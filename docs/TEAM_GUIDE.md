@@ -8,8 +8,8 @@
 
 | Student | Core Domain | Frontend Modules | Backend & Architecture | Key Theorems & Deliverables |
 | :--- | :--- | :--- | :--- | :--- |
-| **Student 1**<br>*(Team Lead / Systems)* | Core Principles & Platform Architecture | `a1_simple`, `a2_generalized`, `a3_exhaustive`, `a4_socks_draws`, `b10_core_table` | `backend/main.cpp`, `core.hpp`, build pipeline, router | Simple & Generalized PHP, Exhaustive Verifier, Hash table core, REST API |
-| **Student 2**<br>*(Analyst / Number Theory)* | Number Theory, Probability & Benchmarks | `b2_dirichlet`, `b3_divisible`, `b4_birthday`, `b8_compression`, `b9_pigeon_sort` | `dirichlet.hpp`, `divisible.hpp`, `birthday.hpp`, `sorting.hpp` | Dirichlet Approx, Prefix Sum Residues, Birthday Paradox, Pigeonhole Sort, Compression Impossibility |
+| **Student 1**<br>*(Team Lead / Systems)* | Core Principles & Platform Architecture | `a1_simple`, `a3_exhaustive`, `a4_socks_draws`, `b10_core_table` | `backend/main.cpp`, `core.hpp`, build pipeline, router | Simple PHP, Exhaustive Verifier, Hash table core, REST API |
+| **Student 2**<br>*(Analyst / Number Theory)* | Generalized Principle, Number Theory & Probability | `a2_generalized`, `b2_dirichlet`, `b3_divisible`, `b4_birthday`, `b8_compression`, `b9_pigeon_sort` | `number_theory.hpp`, `dirichlet.hpp`, `birthday.hpp`, `sorting.hpp` | Generalized PHP $\lceil n/k \rceil$, Dirichlet Approx, Prefix Sum Residues, Birthday Paradox, Pigeonhole Sort, Compression Impossibility |
 | **Student 3**<br>*(Combinatorics / Graphs)* | Graph Theory, Combinatorics & Ramsey | `b1_erdos_szekeres`, `b6_ramsey`, `b7_handshake`, `c1_havel_hakimi`, `c2_hall_marriage`, `c3_graph_coloring` | `erdos_szekeres.hpp`, `ramsey.hpp`, `degree.hpp`, `hall_matching.hpp` | Erdős-Szekeres Theorem, Ramsey $R(3,3)=6$, Havel-Hakimi, Hall's Marriage, Chromatic Number |
 | **Student 4**<br>*(Graphics & Real-World)* | Geometry, Real-World Systems & 3D Visuals | `g1_points_square`, `g2_happy_ending`, `r1_real_world`, `learning_path`, `challenge_mode` | 3D Scenes (`S1` through `S7`), WebGL renderers, CSS design system | 5 Points in Square, Happy Ending 4-gon, 15 Real-World Case Files, 3D Viewports |
 
@@ -19,22 +19,23 @@
 
 ### Speaking Points
 - "I designed the overarching C++17 single-binary microservice architecture using `cpp-httplib` and modern JSON serialization, replacing vulnerable legacy Winsock code with a robust multi-threaded server."
-- "I implemented the fundamental Pigeonhole Principle modules (A1–A4) and preserved our original project core in module B10, demonstrating how hash tables intrinsically depend on the Pigeonhole Principle for load balancing and collision handling."
+- "I implemented the fundamental Simple Pigeonhole Principle modules (A1, A3, A4) and preserved our original project core in module B10, demonstrating how hash tables intrinsically depend on the Pigeonhole Principle for load balancing and collision handling."
 - "I built the exhaustive verifier (A3), which contrasts deductive proof with algorithmic brute-force checking across all $k^n$ mappings, demonstrating how early pruning optimizes verification."
 
 ### Expected Viva Questions & Model Answers
 
-**Q1: How do you mathematically prove the Generalized Pigeonhole Principle?**
-> *Answer*: "By contradiction. If we distribute $n$ items into $k$ boxes and no box contains at least $\lceil n/k \rceil$ items, then each box has at most $\lceil n/k \rceil - 1 < n/k$ items. Summing across all $k$ boxes gives a total count $< k \cdot (n/k) = n$, which contradicts that there are $n$ total items. Hence, at least one box must contain $\ge \lceil n/k \rceil$ items."
+**Q1: What is the formal difference between the Simple PHP and algorithmic brute-force verification?**
+> *Answer*: "Simple PHP is an analytical existence proof by contradiction ($|S| > |T| \implies \exists \text{ collision}$), requiring $O(1)$ deduction. Algorithmic verification, as demonstrated in Module A3, explores all $k^n$ possible assignments using an odometer permutation generator, proving that no collision-free function exists in finite state spaces."
 
 **Q2: What happens to your web application if the C++ backend process crashes or is unreachable?**
 > *Answer*: "We implemented graceful degradation with dual client-server engines. The frontend immediately detects server status through an asynchronous heartbeat probe to `/api/health`. If offline, a warning banner appears, and all mathematical simulations seamlessly switch to native client-side JavaScript calculation engines with zero UI disruption."
 
 ---
 
-## 3. Student 2: Number Theory, Probability & Benchmarks
+## 3. Student 2: Generalized Principle, Number Theory, Probability & Benchmarks
 
 ### Speaking Points
+- "I implemented the foundational Generalized Pigeonhole Principle (A2), proving the $\lceil n/k \rceil$ ceiling bound and demonstrating how adversarial distribution strategies achieve mathematical tightness."
 - "I implemented the mathematical modules linking discrete modular arithmetic and real approximations to the Pigeonhole Principle (B2, B3, B4, B8, B9)."
 - "In Dirichlet's Approximation Theorem (B2), we demonstrated how dividing $[0, 1)$ into $N$ sub-intervals guarantees an integer denominator $q \le N$ such that $|q\alpha - p| < 1/N$."
 - "I created the comparison between the Pigeonhole Principle and the Birthday Paradox (B4), highlighting why 50% probability occurs at $\approx 23$ people while the 100% deterministic guarantee requires 366 people."
@@ -42,10 +43,16 @@
 
 ### Expected Viva Questions & Model Answers
 
-**Q1: Why is it impossible to compress all files of 1000 bytes losslessly?**
-> *Answer*: "There are $2^{8000}$ possible files of 1000 bytes. The total number of all possible files of length strictly less than 1000 bytes (from 0 to 999 bytes) is $\sum_{i=0}^{999} 2^i = 2^{8000} - 1$. By the Pigeonhole Principle, mapping $2^{8000}$ distinct inputs to $2^{8000} - 1$ outputs cannot be injective. At least two files will collide, making lossless reconstruction mathematically impossible."
+**Q1: How do you mathematically prove the Generalized Pigeonhole Principle?**
+> *Answer*: "By contradiction. If we distribute $n$ items into $k$ boxes and assume no box contains at least $\lceil n/k \rceil$ items, then every box must contain at most $\lceil n/k \rceil - 1$ items. Since $\lceil n/k \rceil - 1 < n/k$, summing the contents across all $k$ boxes yields $\sum_{i=1}^k c_i \le k(\lceil n/k \rceil - 1) < k \cdot (n/k) = n$. This strictly bounds the total items to $< n$, directly contradicting the premise that there are $n$ total items. Therefore, at least one box must contain at least $\lceil n/k \rceil$ items."
 
-**Q2: How does the prefix sum algorithm in module B3 guarantee a divisible subsequence in $O(n)$ time?**
+**Q2: Why is the $\lceil n/k \rceil$ bound considered 'tight'?**
+> *Answer*: "A bound is tight if there exists a valid configuration where the maximum occupancy equals the bound exactly. By employing the adversarial (or round-robin) strategy of distributing items one-by-one cyclically among the $k$ boxes, $n \bmod k$ boxes receive $\lceil n/k \rceil$ items and the remaining boxes receive $\lfloor n/k \rfloor$ items. The maximum box load is exactly $\lceil n/k \rceil$, showing the bound cannot be improved."
+
+**Q3: Why is it impossible to compress all files of 1000 bytes losslessly?**
+> *Answer*: "There are $2^{8000}$ possible files of 1000 bytes. The total number of all possible files of length strictly less than 1000 bytes (from 0 to 999 bytes) is $\sum_{i=0}^{7999} 2^i = 2^{8000} - 1$. By the Pigeonhole Principle, mapping $2^{8000}$ distinct inputs to $2^{8000} - 1$ outputs cannot be injective. At least two files will collide, making lossless reconstruction mathematically impossible."
+
+**Q4: How does the prefix sum algorithm in module B3 guarantee a divisible subsequence in $O(n)$ time?**
 > *Answer*: "For $n$ numbers, we compute $n+1$ prefix sums $S_0 = 0, S_1, \dots, S_n$. By the Pigeonhole Principle, among $n+1$ prefix sums modulo $n$, two must share the same residue $r$. If $S_u \equiv S_v \pmod n$ with $u < v$, then $S_v - S_u = \sum_{i=u+1}^v a_i$ is a multiple of $n$, yielding the solution in $O(n)$ time using a hash table of visited residues."
 
 ---

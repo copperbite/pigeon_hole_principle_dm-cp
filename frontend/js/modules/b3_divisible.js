@@ -165,8 +165,8 @@ export default {
 
         <!-- 11. Related Modules -->
         <section style="margin:24px 0; display:flex; gap:12px; flex-wrap:wrap">
-          <a href="#/module/b2_dirichlet" class="btn btn-outline">Next: B2. Dirichlet Approximation →</a>
-          <a href="#/module/b4_birthday" class="btn btn-outline">B4. Birthday Paradox →</a>
+          <a href="#/module/b4_birthday" class="btn btn-outline">Next: B4. Birthday Paradox →</a>
+          <a href="#/module/b5_hashing" class="btn btn-outline">B5. Hashing & Collisions →</a>
           <a href="#/module/g3_number_theory" class="btn btn-outline">G3. Number Theory Gallery →</a>
         </section>
       </div>

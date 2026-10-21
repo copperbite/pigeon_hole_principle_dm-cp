@@ -178,15 +178,15 @@ export default {
           <h3>10. Common Mistakes to Avoid</h3>
           <ul style="padding-left:20px; line-height:1.7; color:var(--text-muted)">
             <li><strong>Using floor instead of ceiling:</strong> The principle guarantees $\lceil n/k \rceil$, NOT $\lfloor n/k \rfloor$. If $n = 5$ and $k = 2$, $\lfloor 5/2 \rfloor = 2$, but the guarantee is $\lceil 5/2 \rceil = 3$.</li>
-            <li><strong>Integer division truncating:</strong> In programming (C++ / JS), integer `n / k` truncates. The correct integer arithmetic formula is `(n + k - 1) / k`.</li>
+            <li><strong>Integer division truncating:</strong> In programming (C++ / JS), integer <code>n / k</code> truncates. The correct integer arithmetic formula is <code>(n + k - 1) / k</code>.</li>
           </ul>
         </section>
 
         <!-- 11. Related Modules -->
         <section style="margin:24px 0; display:flex; gap:12px; flex-wrap:wrap">
           <a href="#/module/a1_simple" class="btn btn-outline">← Back: A1. Simple Principle</a>
-          <a href="#/module/a3_exhaustive" class="btn btn-outline">Next: A3. Exhaustive Verifier →</a>
-          <a href="#/module/a4_socks_draws" class="btn btn-outline">A4. Minimum Draws →</a>
+          <a href="#/module/a4_socks_draws" class="btn btn-outline">Next: A4. Minimum Draws / Socks →</a>
+          <a href="#/module/a5_strong_weighted" class="btn btn-outline">A5. Strong / Weighted →</a>
         </section>
       </div>
     `;

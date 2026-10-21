@@ -178,9 +178,9 @@ export default {
 
         <!-- 11. Related Modules -->
         <section style="margin:24px 0; display:flex; gap:12px; flex-wrap:wrap">
-          <a href="#/module/a3_exhaustive" class="btn btn-outline">← Back: A3. Exhaustive Verifier</a>
+          <a href="#/module/a2_generalized" class="btn btn-outline">← Back: A2. Generalized Principle</a>
+          <a href="#/module/a5_strong_weighted" class="btn btn-outline">A5. Strong / Weighted →</a>
           <a href="#/module/b10_core_table" class="btn btn-outline">Next: B10. The Pigeonhole Table →</a>
-          <a href="#/module/b5_hashing" class="btn btn-outline">B5. Hashing & Collisions →</a>
         </section>
       </div>
     `;

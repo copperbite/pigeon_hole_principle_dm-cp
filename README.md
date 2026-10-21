@@ -96,8 +96,8 @@ Pigeonhole_Principle_Project/
 
 ## 🎓 4-Person Team Distribution
 
-- **Student 1 (Architecture & Core Principles)**: Modules A1–A4, B10; C++ server runtime; Exhaustive computer verifier.
-- **Student 2 (Number Theory & Probabilistic Collisions)**: Modules B2, B3, B4, B8, B9; Dirichlet approximation; Prefix sums; Sorting benchmark.
+- **Student 1 (Architecture & Core Principles)**: Modules A1, A3, A4, B10; C++ server runtime; Exhaustive computer verifier.
+- **Student 2 (Generalized Principle, Number Theory & Probabilistic Collisions)**: Modules A2, B2, B3, B4, B8, B9; Generalized PHP bounds; Dirichlet approximation; Prefix sums; Sorting benchmark.
 - **Student 3 (Graph Theory & Combinatorics)**: Modules B1, B6, B7, C1–C5; Erdős-Szekeres DP; Ramsey $R(3,3)=6$; Hall's marriage; Mantel's theorem.
 - **Student 4 (Geometry, Real-World Systems & 3D Spatial)**: Modules G1, G2, R1, Challenge Mode, Learning Path; 3D scenes S1–S7; Accessibility.
 
