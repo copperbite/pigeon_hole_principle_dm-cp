@@ -1,5 +1,5 @@
 // ============================================================================
-// Module B10: Core DSA Connection - The Pigeonhole Table (Preserved & Enhanced)
+// Module B1: The Pigeonhole Table (DSA Demo)
 // ============================================================================
 
 import { Callout } from '../ui/Callout.js';
@@ -7,7 +7,7 @@ import { Quiz } from '../ui/Quiz.js';
 
 export default {
   id: 'b10_core_table',
-  title: 'Core DSA Connection: The Table Itself',
+  title: 'B1. The Pigeonhole Table (DSA Demo)',
   tier: 1,
   badge: 'DSA Core',
   time: '5 min',
@@ -49,7 +49,7 @@ export default {
             <span class="badge badge-beginner">Core DSA · Tier 1</span>
             <span style="font-size:0.8125rem; color:var(--text-muted)">⏱️ Est. Time: 5 min</span>
           </div>
-          <h1 class="module-title">B10. The Pigeonhole Table (Original Demo)</h1>
+          <h1 class="module-title">B1. The Pigeonhole Table (DSA Demo)</h1>
           <p class="module-big-idea">
             🗄️ In Data Structures & Algorithms, hash tables map keys to index buckets via a hash function $h(k) = k \bmod m$.
             When the key space exceeds the bucket count ($n > m$), the Pigeonhole Principle guarantees that collisions <strong>must occur</strong>.
@@ -159,8 +159,8 @@ export default {
 
         <!-- Related Modules -->
         <section style="margin:24px 0; display:flex; gap:12px; flex-wrap:wrap">
-          <a href="#/module/a1_simple" class="btn btn-outline">← A1. Simple Principle</a>
-          <a href="#/module/b5_hashing" class="btn btn-outline">Next: B5. Hashing & Collisions →</a>
+          <a href="#/module/a7_infinite" class="btn btn-outline">← Back: A5. Infinite Principle</a>
+          <a href="#/module/b5_hashing" class="btn btn-outline">Next: B2. Hashing &amp; Collisions →</a>
         </section>
       </div>
     `;

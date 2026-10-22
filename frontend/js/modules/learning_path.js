@@ -25,25 +25,18 @@ const learning_path = {
       { id:'b5', label:'B2\nHashing', group:'dsa', tier:1, desc:'Hash collisions & load factors', url:'#/module/b5_hashing' },
       { id:'b3', label:'B3\nDivisible', group:'number', tier:1, desc:'Prefix sum residues mod n', url:'#/module/b3_divisible' },
       { id:'b4', label:'B4\nBirthday', group:'number', tier:1, desc:'Birthday Paradox exact/approx', url:'#/module/b4_birthday' },
-      { id:'b6', label:'B5\nRamsey', group:'graph', tier:1, desc:'Ramsey R(3,3)=6 Party Problem', url:'#/module/b6_ramsey' },
-      { id:'b7', label:'B6\nHandshake', group:'graph', tier:2, desc:'Handshake Lemma & Equal Degrees', url:'#/module/b7_handshake' },
-      { id:'b9', label:'B7\nSort', group:'dsa', tier:2, desc:'Pigeonhole Sort O(n+range)', url:'#/module/b9_pigeon_sort' },
+      { id:'b7', label:'B5\nHandshake', group:'graph', tier:2, desc:'Handshake Lemma & Equal Degrees', url:'#/module/b7_handshake' },
       { id:'c1', label:'C1\nHavel-H', group:'graph', tier:2, desc:'Havel-Hakimi Graphic Sequences', url:'#/module/c1_havel_hakimi' },
-      { id:'c3', label:'C2\nColoring', group:'graph', tier:2, desc:'Graph Coloring & χ(G) bounds', url:'#/module/c3_graph_coloring' },
-      { id:'c4', label:'C3\nMantel', group:'graph', tier:3, desc:'Mantel\'s Extremal Graph Theorem', url:'#/module/c4_mantel' },
-      { id:'g1', label:'D1\nSquare', group:'geo', tier:2, desc:'5 Points in Unit Square', url:'#/module/g1_points_square' },
-      { id:'g2', label:'D2\nHappy', group:'geo', tier:3, desc:'Happy Ending Convex Quadrilateral', url:'#/module/g2_happy_ending' },
-      { id:'g3', label:'D3\nNumbers', group:'number', tier:2, desc:'Number Theory Gallery', url:'#/module/g3_number_theory' },
-      { id:'r1', label:'R1\nReal World', group:'app', tier:1, desc:'11 Real-World Case Files', url:'#/module/r1_real_world' },
+      { id:'c5', label:'C2\nEuler', group:'graph', tier:3, desc:'Eulerian Paths & Hamiltonian Cycles', url:'#/module/c5_euler_hamilton' },
+      { id:'r1', label:'D1\nReal World', group:'app', tier:1, desc:'11 Real-World Case Files', url:'#/module/r1_real_world' },
     ];
   },
 
   _links() {
     return [
       ['a1','a2'],['a2','a4'],['a2','a5'],['a5','a7'],
-      ['a2','b3'],['b3','g3'],['a2','b4'],['a2','b5'],['b5','b10'],
-      ['a2','b9'],['a2','b6'],['b6','b7'],['b7','c1'],['b7','c3'],['c3','c4'],
-      ['a2','g1'],['g1','g2'],
+      ['a2','b3'],['a2','b4'],['a2','b5'],['b5','b10'],
+      ['a2','b7'],['b7','c1'],['c1','c5'],
       ['a1','r1'],['b4','r1'],['b5','r1'],
     ];
   },

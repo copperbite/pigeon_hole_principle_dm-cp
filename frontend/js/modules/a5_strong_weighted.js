@@ -1,5 +1,5 @@
 // ============================================================================
-// Module A5: Strong / Weighted Pigeonhole Principle
+// Module A4: Strong / Weighted Pigeonhole Principle
 // ============================================================================
 
 const a5_strong_weighted = {
@@ -15,7 +15,7 @@ const a5_strong_weighted = {
 <div class="module-container">
   <div class="module-header">
     <span class="module-badge badge-tier2">Tier 2</span>
-    <h1 class="module-title">A5. Strong &amp; Weighted Pigeonhole Principle</h1>
+    <h1 class="module-title">A4. Strong &amp; Weighted Pigeonhole Principle</h1>
     <p class="module-subtitle">When boxes have individual capacity thresholds $n_i$, how many objects guarantee at least one box exceeds its threshold?</p>
   </div>
 
@@ -72,6 +72,11 @@ const a5_strong_weighted = {
       </div>
     </div>
   </div>
+
+  <section style="margin:24px 0; display:flex; gap:12px; flex-wrap:wrap">
+    <a href="#/module/a4_socks_draws" class="btn btn-outline">← Back: A3. Minimum Draws / Socks</a>
+    <a href="#/module/a7_infinite" class="btn btn-outline">Next: A5. Infinite Principle →</a>
+  </section>
 </div>`;
   },
 

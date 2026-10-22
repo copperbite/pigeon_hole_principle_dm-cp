@@ -1,5 +1,5 @@
 // ============================================================================
-// Module B7: Handshake Lemma / Equal Degrees
+// Module B5: Handshake Lemma / Equal Degrees
 // ============================================================================
 
 const b7_handshake = {
@@ -22,7 +22,7 @@ const b7_handshake = {
 <div class="module-container">
   <div class="module-header">
     <span class="module-badge badge-tier2">Tier 2</span>
-    <h1 class="module-title">B7. Handshake Lemma &amp; Equal Degrees</h1>
+    <h1 class="module-title">B5. Handshake Lemma &amp; Equal Degrees</h1>
     <p class="module-subtitle">In any graph on $n \\ge 2$ vertices, at least two vertices share the same degree — and the sum of all degrees equals twice the number of edges.</p>
   </div>
 
@@ -90,6 +90,11 @@ const b7_handshake = {
       </div>
     </div>
   </div>
+
+  <section style="margin:24px 0; display:flex; gap:12px; flex-wrap:wrap">
+    <a href="#/module/b4_birthday" class="btn btn-outline">← Back: B4. Birthday Paradox</a>
+    <a href="#/module/c1_havel_hakimi" class="btn btn-outline">Next: C1. Havel-Hakimi Algorithm →</a>
+  </section>
 </div>`;
   },
 

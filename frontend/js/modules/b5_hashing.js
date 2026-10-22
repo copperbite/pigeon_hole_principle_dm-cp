@@ -1,5 +1,5 @@
 // ============================================================================
-// Module B5: Hashing and Collisions (Tier 1, Intermediate)
+// Module B2: Hashing and Collisions (Tier 1, Intermediate)
 // ============================================================================
 
 import { Callout } from '../ui/Callout.js';
@@ -8,7 +8,7 @@ import { Stepper } from '../ui/Stepper.js';
 
 export default {
   id: 'b5_hashing',
-  title: 'Hashing & Collisions (DSA Deep-Dive)',
+  title: 'B2. Hashing & Collisions (DSA Deep-Dive)',
   tier: 1,
   badge: 'Intermediate',
   time: '7 min',
@@ -29,7 +29,7 @@ export default {
             <span class="badge badge-intermediate">Tier 1 · Intermediate</span>
             <span style="font-size:0.8125rem; color:var(--text-muted)">⏱️ Est. Time: 7 min</span>
           </div>
-          <h1 class="module-title">B5. Hashing & Collisions</h1>
+          <h1 class="module-title">B2. Hashing &amp; Collisions</h1>
           <p class="module-big-idea">
             ⚡ Why does every hash table in software require collision handling? Because of the Pigeonhole Principle!
             Whenever keys exceed buckets ($n > m$), collisions are mathematically inevitable.
@@ -224,9 +224,8 @@ export default {
 
         <!-- 11. Related Modules -->
         <section style="margin:24px 0; display:flex; gap:12px; flex-wrap:wrap">
-          <a href="#/module/b10_core_table" class="btn btn-outline">← Back: B10. Pigeonhole Table</a>
-          <a href="#/module/b4_birthday" class="btn btn-outline">Related: B4. Birthday Paradox →</a>
-          <a href="#/module/b9_pigeon_sort" class="btn btn-outline">B9. Pigeonhole Sort →</a>
+          <a href="#/module/b10_core_table" class="btn btn-outline">← Back: B1. The Pigeonhole Table</a>
+          <a href="#/module/b3_divisible" class="btn btn-outline">Next: B3. Divisible Subsequences →</a>
         </section>
       </div>
     `;

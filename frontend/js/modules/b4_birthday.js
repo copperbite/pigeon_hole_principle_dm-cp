@@ -177,8 +177,8 @@ export default {
         <!-- 11. Related Modules -->
         <section style="margin:24px 0; display:flex; gap:12px; flex-wrap:wrap">
           <a href="#/module/b3_divisible" class="btn btn-outline">← Back: B3. Divisible Subsequences</a>
-          <a href="#/module/b5_hashing" class="btn btn-outline">B5. Hashing & Collisions →</a>
-          <a href="#/module/r1_real_world" class="btn btn-outline">R1. Real-World Case Files →</a>
+          <a href="#/module/b7_handshake" class="btn btn-outline">Next: B5. Handshake Lemma →</a>
+          <a href="#/module/r1_real_world" class="btn btn-outline">D1. Real-World Case Files →</a>
         </section>
       </div>
     `;

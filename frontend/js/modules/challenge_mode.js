@@ -79,12 +79,12 @@ const challenge_mode = {
         difficulty: 'medium'
       },
       {
-        scenario: "In any party of 6 people where every pair are either mutual friends or mutual strangers, what does Ramsey's Theorem R(3,3)=6 guarantee?",
-        pigeons: "5 acquaintances of any chosen person",
-        holes: "2 relationship types (friend or stranger)",
+        scenario: "Using the Havel-Hakimi theorem, can a simple graph have degree sequence (3, 3, 3, 1)?",
+        pigeons: "Sum of degrees = 10",
+        holes: "Degree bounds and graphic realizations",
         answer: 1,
-        options: ["Everyone has at least 3 friends", "There are either 3 mutual friends or 3 mutual strangers", "No two people can be strangers", "At least 4 people must know each other"],
-        explanation: "By Ramsey's theorem R(3,3)=6: pick any person A. By PHP, among A's 5 connections, at least ⌈5/2⌉ = 3 must be of the same type (say, friends B, C, D). If any pair among B, C, D are friends, they form a 3-clique with A. Otherwise, B, C, D are 3 mutual strangers!",
+        options: ["Yes — the sum of degrees is even so it is graphic", "No — reduction yields a negative degree, so it is non-graphic", "Only if multi-edges are allowed", "Yes, as a complete graph"],
+        explanation: "Havel-Hakimi removes 3 and decrements the next 3: (3, 3, 1) becomes (2, 2, 0). Next, remove 2 and decrement: (2, 0) becomes (1, -1), containing a negative degree! Thus (3,3,3,1) is not graphic.",
         difficulty: 'hard'
       },
       {
@@ -97,31 +97,31 @@ const challenge_mode = {
         difficulty: 'medium'
       },
       {
-        scenario: "Any 5 points in a unit square must contain two points within distance √2/2 ≈ 0.707 of each other. What is the 'box' in this proof?",
-        pigeons: "5 points",
-        holes: "?",
-        answer: 1,
-        options: ["The unit square itself", "4 quadrants (each ½ × ½ sub-square)", "5 circles of radius √2/2 centered at each point", "The diagonals of the square"],
-        explanation: "The 4 quadrants are the boxes! Divide the unit square into 4 equal quadrants of size ½ × ½. Each quadrant has diameter √((½)²+(½)²) = √2/2. With 5 points into 4 quadrants, two must share a quadrant — their distance is ≤ √2/2.",
-        difficulty: 'medium'
-      },
-      {
-        scenario: "According to Mantel's Theorem, what is the maximum number of edges a graph with 8 vertices can have without containing any triangles (K3)?",
-        pigeons: "Edges distributed across bipartite partitions",
-        holes: "Triangle-free capacity bound",
-        answer: 2,
-        options: ["8 edges", "12 edges", "⌊8²/4⌋ = 16 edges (achieved by K_{4,4})", "28 edges (complete graph K8)"],
-        explanation: "Mantel's Theorem states that any triangle-free graph on n vertices has at most ⌊n²/4⌋ edges. For n=8: ⌊64/4⌋ = 16 edges. The extremal graph is the complete bipartite graph K_{4,4}.",
-        difficulty: 'medium'
-      },
-      {
-        scenario: "A graph $G$ has chromatic number χ(G) = 4. What is the minimum clique number ω(G)?",
-        pigeons: "4 colors required",
-        holes: "Clique structure",
+        scenario: "A connected graph has exactly 2 vertices of odd degree and all other vertices have even degree. What does Euler's theorem guarantee?",
+        pigeons: "Odd-degree endpoints",
+        holes: "Edge traversal parity constraints",
         answer: 0,
-        options: ["ω(G) ≥ 1 — always trivially satisfied (single vertex clique)", "ω(G) ≥ 4 — a 4-coloring requires a 4-clique", "ω(G) = exactly 4", "ω(G) ≤ 3 — a 4-chromatic graph must have ω ≤ 3"],
-        explanation: "Only ω(G) ≥ 1 is always guaranteed. The bound is χ(G) ≥ ω(G), meaning the clique number is a lower bound on chromatic number — not the other way. The Mycielski construction gives triangle-free graphs (ω=2) with arbitrarily large χ. So χ=4 only guarantees ω ≥ 1.",
+        options: ["An Eulerian path exists (starting and ending at the 2 odd vertices)", "An Eulerian circuit exists (returning to the start)", "No path can traverse all edges", "The graph must be a tree"],
+        explanation: "By Euler's theorem, an Eulerian trail visiting every edge exactly once exists if and only if exactly 0 or 2 vertices have odd degree. When exactly 2 are odd, the path starts at one odd vertex and terminates at the other.",
+        difficulty: 'medium'
+      },
+      {
+        scenario: "Three jars have capacities of 3, 4, and 5 marbles respectively. What is the minimum number of marbles needed to guarantee that at least one jar is completely filled?",
+        pigeons: "Marbles placed",
+        holes: "3 jars with quotas (3, 4, 5)",
+        answer: 2,
+        options: ["12 marbles (sum of all capacities)", "11 marbles", "(3-1) + (4-1) + (5-1) + 1 = 10 marbles", "9 marbles"],
+        explanation: "By the Strong/Weighted Pigeonhole Principle: the adversary can place (c_i - 1) marbles into each jar without filling any: 2 + 3 + 4 = 9 marbles. The 10th marble is guaranteed to completely fill at least one jar!",
         difficulty: 'hard'
+      },
+      {
+        scenario: "If the infinite set of all natural numbers N is partitioned into 5 disjoint subsets, what does the Infinite Pigeonhole Principle guarantee?",
+        pigeons: "Infinitely many natural numbers",
+        holes: "5 disjoint partition subsets",
+        answer: 0,
+        options: ["At least one of the 5 subsets must be infinite", "All 5 subsets must be infinite", "Exactly one subset is infinite and 4 are finite", "Each subset contains 20% of the numbers"],
+        explanation: "By the Infinite Pigeonhole Principle: a finite union of finite sets is always finite. If all 5 subsets were finite, their union would be finite, contradicting that N is infinite. Thus at least one subset must be infinite.",
+        difficulty: 'medium'
       }
     ];
   },

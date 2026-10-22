@@ -126,7 +126,7 @@ const r1_real_world = {
 <div class="module-container">
   <div class="module-header">
     <span class="module-badge badge-tier1">Tier 1</span>
-    <h1 class="module-title">R1. Real-World Case Files</h1>
+    <h1 class="module-title">D1. Real-World Case Files</h1>
     <p class="module-subtitle">11 high-impact real-world phenomena explained and quantified through the Pigeonhole Principle — from software systems to network routing.</p>
   </div>
 
@@ -176,6 +176,11 @@ const r1_real_world = {
       </div>
     </div>`).join('')}
   </div>
+
+  <section style="margin:24px 0; display:flex; gap:12px; flex-wrap:wrap">
+    <a href="#/module/c5_euler_hamilton" class="btn btn-outline">← Back: C2. Euler &amp; Hamilton</a>
+    <a href="#/" class="btn btn-outline">🏠 Home &amp; Dashboard</a>
+  </section>
 </div>`;
   },
 

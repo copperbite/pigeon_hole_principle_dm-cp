@@ -1,5 +1,5 @@
 // ============================================================================
-// Module A7: Infinite Pigeonhole Principle
+// Module A5: Infinite Pigeonhole Principle
 // ============================================================================
 
 const a7_infinite = {
@@ -18,7 +18,7 @@ const a7_infinite = {
 <div class="module-container">
   <div class="module-header">
     <span class="module-badge badge-tier3">Tier 3</span>
-    <h1 class="module-title">A7. Infinite Pigeonhole Principle</h1>
+    <h1 class="module-title">A5. Infinite Pigeonhole Principle</h1>
     <p class="module-subtitle">If infinitely many objects are placed into finitely many boxes, at least one box must contain infinitely many objects.</p>
   </div>
 
@@ -92,6 +92,11 @@ const a7_infinite = {
       </div>
     </div>
   </div>
+
+  <section style="margin:24px 0; display:flex; gap:12px; flex-wrap:wrap">
+    <a href="#/module/a5_strong_weighted" class="btn btn-outline">← Back: A4. Strong / Weighted</a>
+    <a href="#/module/b10_core_table" class="btn btn-outline">Next: B1. The Pigeonhole Table →</a>
+  </section>
 </div>`;
   },
 

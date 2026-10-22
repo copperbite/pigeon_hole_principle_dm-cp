@@ -1,5 +1,5 @@
 // ============================================================================
-// Module C5: Eulerian & Hamiltonian Hints
+// Module C2: Eulerian & Hamiltonian Hints
 // ============================================================================
 
 const c5_euler_hamilton = {
@@ -19,7 +19,7 @@ const c5_euler_hamilton = {
 <div class="module-container">
   <div class="module-header">
     <span class="module-badge badge-tier3">Tier 3</span>
-    <h1 class="module-title">C5. Eulerian Circuits &amp; Hamiltonian Hints</h1>
+    <h1 class="module-title">C2. Eulerian Circuits &amp; Hamiltonian Hints</h1>
     <p class="module-subtitle">Degree conditions derived from the Pigeonhole Principle determine when Eulerian circuits and Hamiltonian cycles must exist.</p>
   </div>
 
@@ -74,6 +74,11 @@ const c5_euler_hamilton = {
       </div>
     </div>
   </div>
+
+  <section style="margin:24px 0; display:flex; gap:12px; flex-wrap:wrap">
+    <a href="#/module/c1_havel_hakimi" class="btn btn-outline">← Back: C1. Havel-Hakimi Algorithm</a>
+    <a href="#/module/r1_real_world" class="btn btn-outline">Next: D1. Real-World Case Files →</a>
+  </section>
 </div>`;
   },
 

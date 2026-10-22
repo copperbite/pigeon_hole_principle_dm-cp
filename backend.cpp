@@ -6,10 +6,7 @@
 #include <algorithm>
 #include <cmath>
 #include <iomanip>
-#include <winsock2.h>
-#include <ws2tcpip.h>
 
-#pragma comment(lib, "ws2_32.lib")
 
 struct Pigeon {
     int id;
@@ -185,72 +182,5 @@ std::string serializeToJson(const SimulationResult& result) {
     return json.str();
 }
 
-void sendHttpResponse(SOCKET client, const std::string& status, const std::string& body) {
-    const std::string response = "HTTP/1.1 " + status + "\r\n"
-        "Content-Type: application/json; charset=utf-8\r\n"
-        "Access-Control-Allow-Origin: *\r\n"
-        "Connection: close\r\n"
-        "Content-Length: " + std::to_string(body.size()) + "\r\n\r\n" + body;
-    send(client, response.c_str(), static_cast<int>(response.size()), 0);
-}
 
-int main() {
-    WSADATA winsockData;
-    if (WSAStartup(MAKEWORD(2, 2), &winsockData) != 0) {
-        return 1;
-    }
 
-    SOCKET server = socket(AF_INET, SOCK_STREAM, IPPROTO_TCP);
-    if (server == INVALID_SOCKET) {
-        WSACleanup();
-        return 1;
-    }
-
-    BOOL reuse = TRUE;
-    setsockopt(server, SOL_SOCKET, SO_REUSEADDR, reinterpret_cast<const char*>(&reuse), sizeof(reuse));
-
-    sockaddr_in address{};
-    address.sin_family = AF_INET;
-    address.sin_addr.s_addr = htonl(INADDR_LOOPBACK);
-    address.sin_port = htons(8080);
-
-    if (bind(server, reinterpret_cast<sockaddr*>(&address), sizeof(address)) == SOCKET_ERROR) {
-        closesocket(server);
-        WSACleanup();
-        return 1;
-    }
-
-    if (listen(server, SOMAXCONN) == SOCKET_ERROR) {
-        closesocket(server);
-        WSACleanup();
-        return 1;
-    }
-
-    std::cout << "Pigeonhole server running at http://localhost:8080/api/simulate\n";
-
-    while (true) {
-        SOCKET client = accept(server, nullptr, nullptr);
-        if (client == INVALID_SOCKET) continue;
-
-        char buffer[4096]{};
-        const int received = recv(client, buffer, sizeof(buffer) - 1, 0);
-        const std::string request(buffer, received > 0 ? received : 0);
-
-        if (request.rfind("GET /api/simulate", 0) == 0) {
-            const auto parameters = parseQueryParameters(request);
-            int objects = getIntParam(parameters, "objects", 8);
-            int boxes = getIntParam(parameters, "boxes", 5);
-
-            SimulationResult result = runSimulation(objects, boxes);
-            sendHttpResponse(client, "200 OK", serializeToJson(result));
-        } else {
-            sendHttpResponse(client, "404 Not Found", "{\"error\":\"Not found\"}");
-        }
-
-        closesocket(client);
-    }
-
-    closesocket(server);
-    WSACleanup();
-    return 0;
-}

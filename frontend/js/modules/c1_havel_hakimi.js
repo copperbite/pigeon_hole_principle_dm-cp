@@ -86,6 +86,11 @@ const c1_havel_hakimi = {
       </div>
     </div>
   </div>
+
+  <section style="margin:24px 0; display:flex; gap:12px; flex-wrap:wrap">
+    <a href="#/module/b7_handshake" class="btn btn-outline">← Back: B5. Handshake Lemma</a>
+    <a href="#/module/c5_euler_hamilton" class="btn btn-outline">Next: C2. Euler &amp; Hamilton →</a>
+  </section>
 </div>`;
   },
 

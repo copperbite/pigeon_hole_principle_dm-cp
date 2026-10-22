@@ -118,12 +118,21 @@ class App {
     }
 
     const REDIRECT_MAP = {
-      'b1_erdos_szekeres': 'b6_ramsey',
+      'b1_erdos_szekeres': 'b7_handshake',
       'b8_compression': 'r1_real_world',
       'c2_hall_marriage': 'c1_havel_hakimi',
       'b2_dirichlet': 'b3_divisible',
       'a3_exhaustive': 'a2_generalized',
-      'a6_averaging': 'a2_generalized'
+      'a6_averaging': 'a2_generalized',
+      'a8_higher_structure': 'home',
+      'a6': 'home',
+      'b6_ramsey': 'b7_handshake',
+      'b9_pigeon_sort': 'home',
+      'c3_graph_coloring': 'c1_havel_hakimi',
+      'c4_mantel': 'c1_havel_hakimi',
+      'g1_points_square': 'home',
+      'g2_happy_ending': 'home',
+      'g3_number_theory': 'home'
     };
 
     if (REDIRECT_MAP[moduleId]) {
@@ -146,7 +155,7 @@ class App {
     let module = this.modulesRegistry[moduleId];
     if (!module && moduleId !== 'home') {
       try {
-        const imported = await import(`./modules/${moduleId}.js`);
+        const imported = await import(`./modules/${moduleId}.js?v=3`);
         module = imported.default || imported;
         this.modulesRegistry[moduleId] = module;
       } catch (err) {

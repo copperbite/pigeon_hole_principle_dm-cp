@@ -1,5 +1,5 @@
 // ============================================================================
-// Module A4: Minimum Draws / Socks Problem (Tier 1, Beginner)
+// Module A3: Minimum Draws / Socks Problem (Tier 1, Beginner)
 // ============================================================================
 
 import { Callout } from '../ui/Callout.js';
@@ -8,7 +8,7 @@ import { Stepper } from '../ui/Stepper.js';
 
 export default {
   id: 'a4_socks_draws',
-  title: 'Minimum Draws / Socks Problem',
+  title: 'A3. Minimum Draws / Socks Problem',
   tier: 1,
   badge: 'Beginner',
   time: '5 min',
@@ -29,7 +29,7 @@ export default {
             <span class="badge badge-beginner">Tier 1 · Beginner</span>
             <span style="font-size:0.8125rem; color:var(--text-muted)">⏱️ Est. Time: 5 min</span>
           </div>
-          <h1 class="module-title">A4. Minimum Draws (The Socks Problem)</h1>
+          <h1 class="module-title">A3. Minimum Draws (The Socks Problem)</h1>
           <p class="module-big-idea">
             🧦 You reach into a dark drawer containing socks of $k$ different colors. How many must you pull out to guarantee at least $r$ socks of the same color?
             The worst-case adversary delays your success as long as possible, but at exactly <strong>k(r - 1) + 1</strong> draws, success is mathematically guaranteed.
@@ -179,8 +179,8 @@ export default {
         <!-- 11. Related Modules -->
         <section style="margin:24px 0; display:flex; gap:12px; flex-wrap:wrap">
           <a href="#/module/a2_generalized" class="btn btn-outline">← Back: A2. Generalized Principle</a>
-          <a href="#/module/a5_strong_weighted" class="btn btn-outline">A5. Strong / Weighted →</a>
-          <a href="#/module/b10_core_table" class="btn btn-outline">Next: B10. The Pigeonhole Table →</a>
+          <a href="#/module/a5_strong_weighted" class="btn btn-outline">Next: A4. Strong / Weighted →</a>
+          <a href="#/module/b10_core_table" class="btn btn-outline">B1. The Pigeonhole Table →</a>
         </section>
       </div>
     `;
